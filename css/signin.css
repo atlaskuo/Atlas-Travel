@@ -1,0 +1,193 @@
+@import url('../css/reset.css');
+
+body{
+  background-color: #dcdcde;
+  font-family: 'Belleza', 'Lato', 'Open Sans';
+  margin: 0 auto;
+}
+
+.logo{
+    position: absolute;
+    z-index: 2;
+}
+
+.color{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(223, 19%, 25%, 0.6);
+    /* opacity: 60%; */
+    background-size: cover;
+    position: relative;
+    position: absolute;
+    z-index: 1;
+}
+
+.picture{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/NY_map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative
+}
+
+.box{
+    margin: 0 auto;
+    width: 400px;
+    height: 440px;
+    background-color: #fff;
+    opacity: 80%;
+    border-radius: 4px;
+    position: relative;
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.box h2{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    color: #343b4d;
+}
+
+.box input{
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+    width: 320px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    font-family: 'Belleza', 'Lato', 'Open Sans';
+}
+
+.button{
+    display: flex;
+    margin: 0 auto;
+    width: 320px;
+}
+
+.button a{
+    text-decoration: none;
+}
+
+#signin{
+    justify-content: left;
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    height: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #e5e5e5;
+    background-color: #343b4d;
+    border-radius: 4px;
+    width: 155px;
+    margin-right: 10px;
+}
+
+#signin:hover {
+    color: #faaf18;
+}
+
+#cancel{
+    justify-content: right;
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    height: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #343b4d;
+    background-color: #a6a6a6;
+    border-radius: 4px;
+    width: 155px;
+}
+
+#cancel:hover {
+    color: #606060;
+}
+
+.option{
+    display: flex;
+    margin: 0 auto;
+    width: 320px;
+    margin-top: 12px;
+}
+
+.option a{
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+    width: 155px;
+    color: #343b4d;
+    margin: 0 10px;
+}
+
+.option a:hover{
+    color: #faaf18;
+}
+
+#left{
+    justify-content: left;
+    text-align: left;
+    
+}
+
+#right{
+    justify-content: right;
+    text-align: right;
+    
+}
+
+.box h3{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    color: #343b4d;
+    padding-top: 20px;
+}
+
+.icons{
+    display: flex;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.icons img{
+    width: 28px;
+}
+
+#GG{
+}
+
+#FB{
+    margin-left: auto;
+}
+
+.footer{
+    width: 100%;
+    /* height: 60px; */
+    margin: 0 auto;
+    clear: both;
+    position: relative;
+    position: absolute;
+    z-index: 2;
+    bottom: 0%;
+}
+
+.footer p{
+    font-size: 16px;
+    color: #faaf18;
+    text-align: center;
+    /* font-weight: bold; */
+    line-height: 30px;
+}

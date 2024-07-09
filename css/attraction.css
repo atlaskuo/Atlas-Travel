@@ -1,0 +1,357 @@
+@import url('../css/reset.css');
+
+body{
+  background-color: #dcdcde;
+  font-family: 'Belleza', 'Lato', 'Open Sans';
+  margin: 0 auto;
+}
+
+.header1 {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    display: block;
+}
+
+.header1:hover {
+    background-color: #343b4d;
+}
+
+.header1 a:hover{
+    color:#Faaf18
+}
+
+.header1 li:hover a{
+    color: #Faaf18;
+}
+
+.header1 button:hover{
+    border: 1px solid #Faaf18;
+    color: #Faaf18;
+}
+
+.header1 img {
+    display: block;
+    float: left;
+    padding: 10px 20px 0 20px;
+}
+
+.header1 ul {
+    float: right;
+    padding-right: 120px;
+    margin-top: 10px;
+}
+
+.header1 li {
+    float: left;
+    line-height: 80px;
+}
+
+.header1 li a {
+    display: block;
+    /* width: 100px; */
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.header1 button {
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    margin-right: 20px;
+    width: 80px;
+    height: 40px;
+    font-size: 28px;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.header1 button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.picture{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    /* background-image: url(../img/ToR_View.jpg);
+    background-repeat: no-repeat;
+    background-size: auto; */
+    position: relative;
+}
+
+.picture img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: 0 -350px;
+}
+
+.topic{
+    width: 1000px;
+    height: 300px;
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    left: 50%; /* 將元素的左邊緣設定為父元素的中心 */
+    transform: translateX(-50%); /* 將元素向左移動自身寬度的一半 */
+    top: 400px;
+    box-shadow: 0px 4px 8px #606060;
+    display: flex;
+    border-radius: 12px;
+}
+
+.left{
+    width: 800px;
+    height: 300px;
+    position: relative;
+    background-color: #343b4d;
+    border-radius: 8px 0px 0px 8px ;
+    border-right: 4px dashed #fff;
+}
+
+.left h2{
+    padding-top: 60px;
+    margin-left: 8px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: #fff;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.left ul{
+    padding-left: 36px;
+    padding-top: 20px;
+    list-style-type: square;
+    margin-left: 10px;
+    justify-content: end;
+}
+
+.left li{
+    color: #a6a6a6;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.price{
+    /* flex-grow: 3; */
+    display: flex;
+    align-items: center;
+    width: 200px;
+    margin-bottom: 28px;
+    padding-left: 32px;
+}
+
+.price p{
+    justify-content: left;
+    padding:0 8px;
+    font-size: 16px;
+    color: #606060;
+    
+}
+
+.price h2{
+    justify-content: right;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: darkred;
+    
+}
+
+.select{
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.select h4{
+    color: #343b4d;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.number-picker {
+    display: block;
+    display: flex;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #dcdcde;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    width: 80px;
+    border-radius: 5rem;
+    justify-content: space-between;
+}
+
+.number-picker button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}
+
+.number-picker button:hover {
+    background-color: #343b4d;
+    color: #faaf18;
+}
+
+.right a{
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #343b4d;
+    color: #343b4d;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 48px;
+    text-align: center;
+    width: 180px;
+    margin-bottom: 12px;
+    /* position: absolute;
+    top: 150px;
+    left: 810px; */
+}
+
+.right a:hover{
+    color: #Faaf18;
+    border: 1px solid #faaf18;
+}
+
+
+
+.description{
+    padding-top: 240px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.description p{
+    color: #606060;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-bottom: 20px;
+}
+
+/* .description h3{
+    color: #343b4d;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.6;
+    display: block;
+    padding-bottom: 20px;
+    padding-left: 20px;
+} */
+
+iframe{
+    width: 100%;
+    height: 300px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.ad{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.ad a:hover li{
+    transform: translateY(-12px);
+}
+
+.ad h3{
+    color: #343b4d;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.6;
+    display: block;
+    padding-bottom: 32px;
+    padding-left: 20px;
+}
+
+
+.ad a{
+    text-decoration: none;
+}
+
+.ad ul{
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.card{
+    width: 280px;
+    height: 270px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px #464646;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.card img{
+    display: block;
+    width: 280px;
+    height: 200px;
+    border-radius: 4px 4px 0 0;
+    object-fit: cover;
+}
+
+.card h4{
+    padding-left: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+    color: #343b4d;
+    padding: 12px 0 12px 12px;
+}
+
+
+.footer{
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #343b4d;
+    clear: both;
+}
+
+.footer p{
+    font-size: 16px;
+    color: #faaf18;
+    text-align: center;
+    /* font-weight: bold; */
+    line-height: 30px;
+}
