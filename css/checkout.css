@@ -137,7 +137,7 @@ body {
     grid-area: img;
 }
 
-.card h3{
+.card a{
     color: #343b4d;
     font-size: 26px;
     line-height: 1.6;

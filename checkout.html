@@ -29,37 +29,36 @@
         <div class="order">
             <h2>Order Details</h2>
             <ul>
-                <a href="">
                     <li class="card">
                         <img src="./img/moma.jpg" alt="">
-                        <h3>Ticket of MoMA</h3>
+                        <a href=""><h3>Ticket of MoMA</h3></a>
                         <div class="select">
                             <h4>Quantity: </h4>
                             <div class="number-picker">
-                                <button onclick="decrement()">-</button>
-                                <span id="number">1</span>
-                                <button onclick="increment()">+</button>
+                                <button onclick="decrement('item1')">-</button>
+                                <span id="number-item1">1</span>
+                                <button onclick="increment('item1')">+</button>
+                                <script src="./javascripts/checkout.js"></script>
                             </div>
                         </div>
                         <button class="delete"><i class="fa-solid fa-trash"></i></button>
-                        <p>$ 12.34</p>
+                        <p id="item1Total">$ 12.34</p>
                     </li>
                     <li class="card">
                         <img src="./img/NYCD.jpg" alt="">
-                        <h3>Manhattan 1-Day Tour</h3>
+                        <a href=""><h3>Manhattan 1-Day Tour</h3></a>
                         <div class="select">
                             <h4>Quantity: </h4>
                             <div class="number-picker">
-                                <button onclick="decrement()">-</button>
-                                <span id="number">1</span>
-                                <button onclick="increment()">+</button>
+                                <button onclick="decrement('item2')">-</button>
+                                <span id="number-item2">1</span>
+                                <button onclick="increment('item2')">+</button>
+                                <script src="./javascripts/checkout.js"></script>
                             </div>
                         </div>
                         <button class="delete" type=""><i class="fa-solid fa-trash"></i></button>
-                        
-                        <p>$ 56.78</p>
+                        <p id="item2Total">$ 56.78</p>
                     </li>
-                </a>
             </ul>
         </div>
         <div class="payment">
@@ -68,21 +67,21 @@
                 <table class="detail">
                     <tr>
                         <td class="type">items</td>
-                        <td class="amount">US $69.12</td>
+                        <td class="amount" id="item-total">US $69.12.00</td>
                     </tr>
                     <tr>
                         <td class="type">shipping</td>
-                        <td class="amount">US $0</td>
+                        <td class="amount" id="shipping-total">US $0.00</td>
                     </tr>
                     <tr>
                         <td class="type">tax</td>
-                        <td class="amount">US $3.45</td>
+                        <td class="amount" id="tax-total">US $3.46</td>
                     </tr>
                 </table>
                 <hr>
                 <div>
                     <h3 class="total">Order Total</h3>
-                    <h3 class="price">US$ 72.57</h3>
+                    <h3 class="price" id="order-total">US$ 72.58</h3>
                 </div>
                 <a href="#">CONFIRM & PAY</a>
             </div>    
