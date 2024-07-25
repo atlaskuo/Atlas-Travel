@@ -3,62 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/checkout.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Check Out</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./javascripts/checkout.js"></script>
+    <title>Cart</title>
 </head>
 
 <body>
-    <div class="header2">
+    <div class="main-header header2">
         <div class="logo">
-            <a href="./index.html"><img class="logo_yellow" src="./img/logo_yellow.png" alt=""></a>
+            <a href="./index.html"><img class="logo_white" src="./img/logo_yellow.png" alt=""></a>
         </div>
-        <ul>
-            <li><a href="tour.html">TOUR</a></li>
-            <li><a href="attraction.html">ATTRACTION</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="checkout.html">CART</a></li>
-        </ul>
-        <button><a class="login" href="signin.html">login</a></button>
+        <a href="#" id="menu-toggle"><i class="fa-solid fa-bars"></i></a>
+        <nav class="menu">
+            <ul>
+                <li><a href="./tour.html">TOUR</a></li>
+                <li><a href="./attraction.html">ATTRACTION</a></li>
+                <li><a href="./blog.html">BLOG</a></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./checkout.html">CART</a></li>
+                <li><a href="./signin.html">SIGN IN</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="wrapper">
         <div class="order">
             <h2>Order Details</h2>
             <ul>
-                    <li class="card">
-                        <img src="./img/moma.jpg" alt="">
-                        <a href=""><h3>Ticket of MoMA</h3></a>
-                        <div class="select">
-                            <h4>Quantity: </h4>
-                            <div class="number-picker">
-                                <button onclick="decrement('item1')">-</button>
-                                <span id="number-item1">1</span>
-                                <button onclick="increment('item1')">+</button>
-                                <script src="./javascripts/checkout.js"></script>
-                            </div>
+                <li class="card">
+                    <div class="picture"><img src="./img/moma.jpg" alt=""></div>
+                    <a href="">
+                        <h3>Ticket of MoMA</h3>
+                    </a>
+                    <div class="select">
+                        <h4>Quantity: </h4>
+                        <div class="number-picker">
+                            <button onclick="decrement('item1')">-</button>
+                            <span id="number-item1">1</span>
+                            <button onclick="increment('item1')">+</button>
+                            <!-- <script src="./javascripts/checkout.js"></script> -->
                         </div>
-                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
-                        <p id="item1Total">$ 12.34</p>
-                    </li>
-                    <li class="card">
-                        <img src="./img/NYCD.jpg" alt="">
-                        <a href=""><h3>Manhattan 1-Day Tour</h3></a>
-                        <div class="select">
-                            <h4>Quantity: </h4>
-                            <div class="number-picker">
-                                <button onclick="decrement('item2')">-</button>
-                                <span id="number-item2">1</span>
-                                <button onclick="increment('item2')">+</button>
-                                <script src="./javascripts/checkout.js"></script>
-                            </div>
+                    </div>
+                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    <p id="itemTotal-1">$ 12.34</p>
+                    <!-- <script src="./javascripts/checkout.js"></script> -->
+                </li>
+                <li class="card">
+                    <div class="picture"><img src="./img/NYCD.jpg" alt=""></div>
+                    <a href="">
+                        <h3>Manhattan 1-Day Tour</h3>
+                    </a>
+                    <div class="select">
+                        <h4>Quantity: </h4>
+                        <div class="number-picker">
+                            <button onclick="decrement('item2')">-</button>
+                            <span id="number-item2">1</span>
+                            <button onclick="increment('item2')">+</button>
+                            <!-- <script src="./javascripts/checkout.js"></script> -->
                         </div>
-                        <button class="delete" type=""><i class="fa-solid fa-trash"></i></button>
-                        <p id="item2Total">$ 56.78</p>
-                    </li>
+                    </div>
+                    <button class="delete" type=""><i class="fa-solid fa-trash"></i></button>
+                    <p id="itemTotal-2">$ 56.78</p>
+                    <!-- <script src="./javascripts/checkout.js"></script> -->
+                </li>
             </ul>
         </div>
         <div class="payment">
@@ -84,14 +100,16 @@
                     <h3 class="price" id="order-total">US$ 72.58</h3>
                 </div>
                 <a href="#">CONFIRM & PAY</a>
-            </div>    
+            </div>
+            <!-- <script src="./javascripts/checkout.js"></script> -->
         </div>
 
     </div>
 
     <div class="footer">
-        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
+        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development
+            Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
         <p>All Rights Reserved</p>
     </div>
-    
+
 </body>

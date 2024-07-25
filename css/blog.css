@@ -87,7 +87,7 @@ body{
 .picture{
     margin: 0 auto;
     width: 100%;
-    height: 500px;
+    height: 30%;
     background-image: url(../img/blogBanner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,12 +103,13 @@ body{
     line-height: 1.6;
     color: #fff;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 120px;
     padding-bottom: 60px;
 }
 
 .content{
-    width: 1200px;
+    width: 85%;
+    max-width: 1200px;
     background-color: #dcdcde;
     margin: 0 auto;
     flex-grow: 2; 
@@ -127,23 +128,33 @@ body{
 }
 
 .card{
-    width: 1180px;
-    height: 300px;
+    width: 100%;
+    height: 24vh;
+    min-height: 280px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 2px 2px 4px #464646;
     margin: 20px 0;
-    position: relative;
     padding-right: 20px;
+    display: flex;
+}
+
+.card .word{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 95%;
+    padding-bottom: 4px;
 }
 
 
 .card img{
-    float: left;
     display: block;
     padding: 20px;
-    height: 260px;
-    min-width: 462px;
+    width: 35%;
+    min-width: 380px;
+    max-height: 260px;
     object-fit: cover;
 }
 
@@ -155,19 +166,21 @@ body{
     padding-bottom: 20px;
     padding-top: 20px;
     padding-right: 20px;
+    justify-items: flex-start;
+    margin-bottom: 0px;
 }
 
 .card p{
     color: #606060;
     font-size: 16px;
     line-height: 1.6;
-    display: block;
+    display: block;    
 }
 
+
 .RM{
-    position: absolute;
-    top: 260px;
-    left: 1100px;
+    align-self: flex-end;
+    justify-self: flex-end;
 }
 
 .footer {
@@ -175,9 +188,7 @@ body{
     height: 60px;
     margin: 0 auto;
     background-color: #343b4d;
-    clear: both;
-    
-    
+    clear: both; 
 }
 
 .footer p {
@@ -188,3 +199,126 @@ body{
     line-height: 30px;
 
 }
+
+/* RWD */
+
+@media screen and (max-width: 1000px){
+  
+    .header1 img{
+        margin: 0 auto;
+        width: 40%;
+    }
+
+    .header1 nav{
+        display: none;
+    }
+
+    .header1 a{
+        font-size: 16px;
+    }
+
+    .header1 i{
+        font-size: 2em;
+        color: #faaf18;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 10px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .header1:hover{
+        background-color: rgba(52, 59, 77, 40%);
+    }
+    
+    /* 顯示選單列表 */
+    .menu-show .menu {
+        display: block;
+        position: fixed;
+        width: 100%;
+        min-width: 200px;
+        height: calc(100vh - 100px);
+        height: 100%;
+        top: 100px;
+        right: 0;
+        background-color: rgba(52, 59, 77, 40%);
+        transition: all .5s;
+    }
+
+    .menu-show .menu ul{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-show .menu li{
+        width: 150px;
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px solid #dcdcde;
+    }
+
+    .card p{
+        
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+
+    .card img{
+        min-width: 200px;
+    }
+
+    .footer p{
+        background-color: #343b4d;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .picture h2{
+        padding-top: 80px;
+        padding-bottom: 40px;
+        font-size: 28px;
+    }
+    
+    .picture{
+        max-height: 200px;
+    }
+
+    .card{
+        min-height: 200px;
+    }
+    
+    .card h3{
+        font-size: 4vw;
+        padding: 12px;
+    }
+
+    .card p{
+        font-size: 3vw;
+        
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+    
+    .card img{
+        width: 25%;
+        min-width: 120px;
+        padding: 12px;
+    }
+}
+
+
+    

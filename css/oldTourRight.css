@@ -1,0 +1,166 @@
+.right{
+    width: calc(40% - 10px);
+    max-width: 490px;
+    margin-left: auto;
+    float: right;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #464646;
+}
+
+.right hr{
+    width: calc(100% * 0.9);
+    color: #606060;
+    margin: 12px auto;
+}
+
+.right h3{
+    width: 100%;
+    color: #343b4d;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.6;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.right ul{
+    
+    list-style-type: square;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right li{
+    color: #606060;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.radio{
+    padding-top: 8px;
+    /* display: block; */
+    margin: 0 auto;
+    max-width: 470px;
+}
+
+.radio h4{
+    color: #343b4d;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 470px;
+}
+
+.option{
+    max-width: 420px;
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.radio input{
+    width: 24px;
+}
+
+.radio label{
+    color: #606060;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+    width: 470px;
+}
+
+.radio h5{
+    text-align-last: right;
+    color: darkred;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.radio p{
+    /* display: block; */
+    color: #606060;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 420px;
+    margin-left: 46px;
+    margin-right: 20px;
+}
+
+.select{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.select h4{
+    color: #343b4d;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 470px;
+}
+
+.number-picker {
+    display: block;
+    display: flex;
+    padding: 30px;
+    margin: 30px;
+    /* display: inline-block; */
+    border: 1px solid #ccc;
+    background-color: #dcdcde;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    width: 100px;
+    border-radius: 5rem;
+    justify-content: space-between;
+}
+
+.number-picker button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}
+
+.number-picker button:hover {
+    background-color: #343b4d;
+    color: #faaf18;
+}
+
+.right a{
+    margin: 0 auto;
+    display: block;
+    border-radius: 12px;
+    background-color: #343b4d;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 50px;
+    text-align: center;
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.right a:hover{
+    color: #Faaf18;
+}

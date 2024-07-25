@@ -3,33 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Homepage</title>
 </head>
 
 <body>
-    <div class="header1">
+    <div class="main-header header1">
         <div class="logo">
             <a href="./index.html"><img class="logo_white" src="./img/logo_yellow.png" alt=""></a>
         </div>
-        <ul>
-            <li><a href="./tour.html">TOUR</a></li>
-            <li><a href="./attraction.html">ATTRACTION</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="./checkout.html">CART</a></li>
-        </ul>
-        <button><a class="login" href="./signin.html">login</a></button>
+        <a href="#" id="menu-toggle"><i class="fa-solid fa-bars"></i></a>
+        <nav class="menu">
+            <ul>
+                <li><a href="./tour.html">TOUR</a></li>
+                <li><a href="./attraction.html">ATTRACTION</a></li>
+                <li><a href="./blog.html">BLOG</a></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./checkout.html">CART</a></li>
+                <li><a href="./signin.html">SIGN IN</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // 選單按鈕的點擊事件處理
+                const menuToggle = document.getElementById("menu-toggle");
+                const menu = document.querySelector(".menu");
+
+                menuToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.body.classList.toggle("menu-show"); // 切換 body 的 class
+                });
+            });
+        </script>
     </div>
     <div class="picture">
-        <h1><a href="">Manhattan Downtown 1-Day Tour</a></h1>
+        <video src="./img/index3.mp4" playsinline="" autoplay="" muted="" loop="" type="video/mp4" height="100%"
+            width="100%" class="banner-video"></video>
+        <h1>New York is not a city, it’s a world.</h1>
     </div>
     <div class="wrapper">
         <div class="info">
-            <ul>
+            <ul class="up">
                 <li class="topic">
                     <h1>Experience Amazing,</h1>
                     <h1>Book tickets TODAY!</h1>
@@ -62,7 +86,11 @@
         </div>
 
         <div class="info">
-            <ul>
+            <ul class="down">
+                <li class="topic">
+                    <h1>Learn more about our favorite</h1>
+                    <h1>BIG APPLE!</h1>
+                </li>
                 <a href="#">
                     <li class="card">
                         <img src="./img/plane.jpg" alt="">
@@ -87,15 +115,12 @@
                         <!-- <h4>From $29</h4> -->
                     </li>
                 </a>
-                <li class="topic">
-                    <h1>Learn more about our favorite</h1>
-                    <h1>BIG APPLE!</h1>
-                </li>
             </ul>
         </div>
     </div>
     <div class="footer">
-        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
+        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development
+            Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
         <p>All Rights Reserved</p>
     </div>
 </body>

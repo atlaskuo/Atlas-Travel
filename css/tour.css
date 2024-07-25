@@ -6,87 +6,16 @@ body{
   margin: 0 auto;
 }
 
-.header2{
-    width: 100%;
-    height: 100px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: absolute;
-    background-color: #343b4d;
-}
-
-.header2 img{
-    display: block;
-    float: left;
-    padding: 10px 20px 0 20px;
-}
-
-.header2 ul{
-    float: right;
-    padding-right: 120px;
-    margin-top: 10px;
-}
-
-.header2 li{
-    float: left;
-    line-height: 80px;
-}
-
-.header2 li a{
-    display: block;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    padding: 0 20px;
-}
-
-.header2 button{
-    margin-left: auto;
-    position: absolute;
-	top: 0;
-	left: auto;
-	bottom: 0;
-	right: 0;   
-	margin: auto;
-    margin-right: 20px;
-    width: 80px;
-    height: 40px;
-    font-size: 28px;
-    background-color: transparent;
-    border: 1px solid #Fff;
-}
-
-.header2 button a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.header2 a:hover{
-    color:#Faaf18
-}
-
-.header2 li:hover a{
-    color: #Faaf18;
-}
-
-.header2 button:hover{
-    border: 1px solid #Faaf18;
-}
-
-.header2 button:hover ~ a{
-    color: #Faaf18;
-}
-
 .wrapper{
     margin: 0 auto;
-    width: 1200px;
-    padding-top: 100px;
+    max-width: 1200px;
+    padding-top: 10%;
 }
 
 .img{
     display: block;
     width: 100%;
-    height: 400px;
+    max-height: 400px;
     margin: 0 auto;
     padding-top: 20px;
     object-fit: cover;
@@ -103,7 +32,8 @@ body{
 
 .wrapper p{
     display: block;
-    width: 1000px;
+    width: 85%;
+    max-width: 1000px;
     margin: 0 auto;
     color: #606060;
     font-size: 18px;
@@ -111,10 +41,14 @@ body{
     padding-bottom: 10px;
 }
 
+.content{
+    display: flex;
+}
+
 .left{
-    width: 690px;
+    width: 60%;
+    max-width: 690px;
     margin-right: auto;
-    float: left;
     padding-bottom: 20px;
     margin-top: 30px;
 }
@@ -160,32 +94,38 @@ body{
 }
 
 .right{
-    width: 490px;
+    width: calc(40% - 10px);
+    max-width: 490px;
+    max-height: 840px;
     margin-left: auto;
-    float: right;
     margin-top: 30px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 2px 2px 4px #464646;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4px;
 }
 
 .right hr{
-    width: 450px;
+    width: calc(100% * 0.9);
     color: #606060;
-    margin: 0 auto;
     margin: 12px auto;
 }
 
 .right h3{
+    width: 100%;
     color: #343b4d;
     font-size: 26px;
     font-weight: bold;
     line-height: 1.6;
-    padding: 20px;
+    padding: 20px 0 20px 0;
     text-align: center;
+    margin: 0 auto;
 }
 
 .right ul{
+    
     list-style-type: square;
     padding-left: 40px;
     padding-top: 10px;
@@ -200,9 +140,9 @@ body{
 
 .radio{
     padding-top: 8px;
-    display: block;
+    /* display: block; */
     margin: 0 auto;
-    width: 470px;
+    max-width: 470px;
 }
 
 .radio h4{
@@ -213,15 +153,14 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    width: 470px;
 }
 
 .option{
-    width: 420px;
+    width: 90%;
+    max-width: 420px;
     margin-left: 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding-bottom: 4px;
 }
 
@@ -234,7 +173,6 @@ body{
     font-size: 18px;
     font-weight: bold;
     line-height: 2;
-    width: 470px;
 }
 
 .radio h5{
@@ -243,10 +181,11 @@ body{
     font-size: 18px;
     font-weight: bold;
     line-height: 2;
+    margin-left: auto;
 }
 
 .radio p{
-    display: block;
+    /* display: block; */
     color: #606060;
     font-size: 16px;
     line-height: 1.6;
@@ -256,7 +195,8 @@ body{
 }
 
 .select{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -270,14 +210,14 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    width: 470px;
+    
 }
 
 .number-picker {
     display: block;
     display: flex;
     padding: 30px;
-    margin: 30px;
+    margin: 30px 0 30px auto;
     /* display: inline-block; */
     border: 1px solid #ccc;
     background-color: #dcdcde;
@@ -333,14 +273,177 @@ body{
 
 .footer p{
     font-size: 16px;
+    background-color: #343b4d;
     color: #faaf18;
     text-align: center;
     /* font-weight: bold; */
     line-height: 30px;
-    
+}
+
+/*  RWD  */
+
+@media screen and (max-width: 820px){
+
+.header2{
+    background-color: rgba(0, 0, 0, 0);
+    height: 80px;
+}
+
+.header2 img{
+    margin: 0 auto;
+    width: 40%;
+    max-width: 297px;
+}
+
+.header2 nav{
+    display: none;
+}
+
+.header2 a{
+    font-size: 16px;
+}
+
+.header2 i{
+    font-size: 1.8em;
+    color: #faaf18;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+/* 顯示選單列表 */
+.menu-show .menu {
+    display: block;
+    position: fixed;
+    width: 100%;
+    min-width: 200px;
+    height: calc(100vh - 100px);
+    height: 100%;
+    top: 100px;
+    right: 0;
+    background-color: rgba(52, 59, 77, 40%);
+    transition: all .5s;
+}
+
+.menu-show .menu ul{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-show .menu li{
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.wrapper{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper h2{
+    padding: 8px;
+    padding-bottom: 12px;
+    line-height: 1.6;
+}
+
+.content{
+    flex-direction: column;
+}
+
+.left{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.left ul{
+    width: 100%;
+    margin: auto 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 
+.left li{
+    margin-top: 16px;
+    width: calc(100% - 12px);
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr;
+    grid-template-rows: 30% auto;
+    grid-template-areas: 'img h3 h3 h3'
+                         'img p p p';
+    grid-gap: 4px;
+}
+
+.left img{
+    grid-area: img;
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    justify-content: center;
+}
+
+.left h3{
+    grid-area: h3;
+    line-height: 1.2;  
+    padding-top: 4px;
+    font-size: 1.6em;
+}
+
+.left p{
+    grid-area: p;
+    padding-bottom: 4px;
+    font-size: 0.9em;
+}
+
+.right{
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+}
+
+@media screen and (max-width: 500px){
+    
+    .left li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left p{
+        display: none;
+    }
+
+    .left img{
+        margin-bottom: 0px;
+        border-radius: 0;
+        width: calc(100% - 8px);
+        height: auto;
+        max-height: 120px;
+    }
+
+    .left h3{
+        font-size: 5vw;
+    }
+}
 
 
 

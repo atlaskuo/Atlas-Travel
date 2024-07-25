@@ -3,85 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/tour.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <script src="./js/jquery-3.7.1.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Tour</title>
 </head>
 
 <body>
-    
-    <div class="header2">
+    <div class="main-header header2">
         <div class="logo">
-            <a href="./index.html"><img class="logo_yellow" src="./img/logo_yellow.png" alt=""></a>
+            <a href="./index.html"><img class="logo_white" src="./img/logo_yellow.png" alt=""></a>
         </div>
-        <ul>
-            <li><a href="./tour.html">TOUR</a></li>
-            <li><a href="attraction.html">ATTRACTION</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="checkout.html">CART</a></li>
-        </ul>
-        <button><a class="login" href="signin.html">login</a></button>
+        <a href="#" id="menu-toggle"><i class="fa-solid fa-bars"></i></a>
+        <nav class="menu">
+            <ul>
+                <li><a href="./tour.html">TOUR</a></li>
+                <li><a href="./attraction.html">ATTRACTION</a></li>
+                <li><a href="./blog.html">BLOG</a></li>
+                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./checkout.html">CART</a></li>
+                <li><a href="./signin.html">SIGN IN</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // 選單按鈕的點擊事件處理
+                const menuToggle = document.getElementById("menu-toggle");
+                const menu = document.querySelector(".menu");
+
+                menuToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.body.classList.toggle("menu-show"); // 切換 body 的 class
+                });
+            });
+        </script>
     </div>
 
     <div class="wrapper">
         <img class="img" src="./img/eastRiver.jpg" alt="">
         <h2>Manhattan Water Cruises Tour</h2>
-        <p>Experience the only sightseeing cruise in New York City that completely goes around the island of Manhattan in our temperature-controlled, state-of-the-art boats.</p>
-        <p>During this 2 hour and 30 minute cruise you’ll cruise along all three NYC rivers, pass under 20 bridges and see over 130 of the city’s most iconic landmarks including the Manhattan skyline, Little Island, Hudson Yards, One World Trade Center, Brooklyn Bridge and downtown Brooklyn, Yankee Stadium, the George Washington Bridge and, of course, an up close look at the Statue of Liberty and Ellis Island!</p>
-        <div class="left">
-            <h2>What you'll see</h2>
-            <ul>
-                <li>
-                    <img src="./img/ESB.jpg" alt="">
-                    <h3>Empire State Building</h3>
-                    <p>Standing 1,250’ (381m) tall, it was the world's tallest building from 1931 until the World Trade Center was completed in 1972.</p>
-                </li>
-                <li>
-                    <img src="./img/OneWorld.jpg" alt="">
-                    <h3>One World Trade Center</h3>
-                    <p>The main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City. Designed by David Childs of Skidmore, Owings & Merrill, One World Trade Center is the tallest building in the United States, the tallest building in the Western Hemisphere, and the seventh-tallest in the world. </p>
-                </li>
-                <li>
-                    <img src="./img/SL.jpg" alt="">
-                    <h3>Statue of Liberty</h3>
-                    <p>Standing 305’ (93m) tall, Lady Liberty has welcomed visitors since she was bequeathed to America from France in 1886.</p>
-                </li>
-                <li>
-                    <img src="./img/CB.jpg" alt="">
-                    <h3>Chrysler Building</h3>
-                    <p>Classic Art Deco architecture, the building dons gargoyles that depict car ornaments and a spire modeled on a radiator grille.</p>
-                </li>
-                <li>
-                    <img src="./img/Brooklyn_bridge.jpg" alt="">
-                    <h3>Brooklyn Bridge</h3>
-                    <p>The longest suspension bridge when it opened in 1883, its 276’ (84m) high towers are built of limestone, granite and cement.</p>
-                </li>
-                <li>
-                    <img src="./img/yankee_ariel.jpg" alt="">
-                    <h3>Yankee Stadium</h3>
-                    <p>In its 85+ year history, this “cathedral to baseball” has hosted 6,581 Yankees regular season home games.</p>
-                </li>
-            </ul>
-        </div>
-        <div class="right">
-            <h3>Plan Your Visit</h3>
-            <hr>
-            <ul>
-                <li>Time: 2 hrs and 30 minutes</li>
-                <li>Outdoor Deck Space</li>
-                <li>Photo stop at the Statue of Liberty</li>
-                <li>Snacks & full bar</li>
-                <li>Tour guide</li>
-                <li>Parking at Pier 83</li>
-                <li>Smoke-Free</li>
-            </ul>
-            <hr>
-            <fieldset class="radio">
-                <h4>select an admission type:</h4>  
+        <p>Experience the only sightseeing cruise in New York City that completely goes around the island of Manhattan
+            in our temperature-controlled, state-of-the-art boats.</p>
+        <p>During this 2 hour and 30 minute cruise you’ll cruise along all three NYC rivers, pass under 20 bridges and
+            see over 130 of the city’s most iconic landmarks including the Manhattan skyline, Little Island, Hudson
+            Yards, One World Trade Center, Brooklyn Bridge and downtown Brooklyn, Yankee Stadium, the George Washington
+            Bridge and, of course, an up close look at the Statue of Liberty and Ellis Island!</p>
+        <div class="content">
+            <div class="left">
+                <h2>What you'll see</h2>
+                <ul>
+                    <li>
+                        <img src="./img/ESB.jpg" alt="">
+                        <h3>Empire State Building</h3>
+                        <p>Standing 1,250’ (381m) tall, it was the world's tallest building from 1931 until the World Trade
+                        Center was completed in 1972.</p>
+                    </li>
+                    <li>
+                        <img src="./img/OneWorld.jpg" alt="">
+                        <h3>One World Trade Center</h3>
+                        <p>The main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City.
+                        One World Trade Center is the tallest
+                        building in the United States. </p>
+                    </li>
+                    <li>
+                        <img src="./img/SL.jpg" alt="">
+                        <h3>Statue of Liberty</h3>
+                        <p>Standing 305’ (93m) tall, Lady Liberty has welcomed visitors since she was bequeathed to America
+                        from France in 1886.</p>
+                    </li>
+                    <li>
+                        <img src="./img/CB.jpg" alt="">
+                        <h3>Chrysler Building</h3>
+                        <p>Classic Art Deco architecture, the building dons gargoyles that depict car ornaments and a spire
+                        modeled on a radiator grille.</p>
+                    </li>
+                    <li>
+                        <img src="./img/Brooklyn_bridge.jpg" alt="">
+                        <h3>Brooklyn Bridge</h3>
+                        <p>The longest suspension bridge when it opened in 1883, its 276’ (84m) high towers are built of
+                        limestone, granite and cement.</p>
+                    </li>
+                    <li>
+                        <img src="./img/yankee_ariel.jpg" alt="">
+                        <h3>Yankee Stadium</h3>
+                        <p>In its 85+ year history, this “cathedral to baseball” has hosted 6,581 Yankees regular season
+                        home games.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <h3>Plan Your Visit</h3>    
+                <hr>
+                <ul>
+                    <li>Time: 2 hrs and 30 minutes</li>
+                    <li>Outdoor Deck Space</li>
+                    <li>Photo stop at the Statue of Liberty</li>
+                    <li>Snacks & full bar</li>
+                    <li>Tour guide</li>
+                    <li>Parking at Pier 83</li>
+                    <li>Smoke-Free</li>
+                </ul>
+                <hr>
+                <fieldset class="radio">
+                    <h4>select an admission type:</h4>
                     <div>
                         <div class="option">
                             <input type="radio" id="Premium" name="option" value="Premium" checked />
@@ -90,32 +122,34 @@
                         </div>
                         <p>Inside in the temperature-controlled cabin. Guaranteed port-side seating for best views.</p>
                     </div>
-              
+
                     <div>
                         <div class="option">
                             <input type="radio" id="General" name="option" value="General" />
                             <label for="General">General</label>
                             <h5>$45</h5>
-                        </div>    
+                        </div>
                         <p>On the outdoor deck, or inside the temperature controlled cabin.</p>
                     </div>
-            </fieldset>
-            <div class="select">
-                <h4>how many people will join us ?</h4>
-                <div class="number-picker">
-                    <button onclick="decrement()">-</button>
-                    <span id="number">1</span>
-                    <button onclick="increment()">+</button>
-                    <script src="./javascripts/tour.js"></script>
+                </fieldset>
+                <div class="select">
+                    <h4>how many people will join us ?</h4>
+                    <div class="number-picker">
+                        <button onclick="decrement()">-</button>
+                        <span id="number">1</span>
+                        <button onclick="increment()">+</button>
+                        <script src="./javascripts/tour.js"></script>
+                    </div>
                 </div>
+                <hr>
+                <a href="#">BOOK NOW!</a>
             </div>
-            <hr>
-            <a href="#">BOOK NOW!</a>
         </div>
     </div>
 
     <div class="footer">
-        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
+        <p>This website is a project created by students of the TibaMe Front-End Engineer Professional Development
+            Program, 93rd cohort. It is intended for learning and demonstration purposes only.</p>
         <p>All Rights Reserved</p>
-    </div>    
+    </div>
 </body>

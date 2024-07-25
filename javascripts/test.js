@@ -1,3 +1,24 @@
+// numberpicker
+let currentNumber = 1;
+    const numberElement = document.getElementById('number');
+
+function increment() {
+    currentNumber++;
+    updateNumber();
+}
+
+function decrement() {
+    if (currentNumber > 1) {
+    currentNumber--;
+    updateNumber();
+    }
+}
+
+function updateNumber() {
+    numberElement.textContent = currentNumber;
+}
+
+// according
 var acc = document.getElementsByClassName("accordion");
 var i;
 
