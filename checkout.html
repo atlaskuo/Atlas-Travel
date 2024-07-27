@@ -34,6 +34,18 @@
                 <li><a href="./signin.html">SIGN IN</a></li>
             </ul>
         </nav>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // 選單按鈕的點擊事件處理
+                const menuToggle = document.getElementById("menu-toggle");
+                const menu = document.querySelector(".menu");
+
+                menuToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.body.classList.toggle("menu-show"); // 切換 body 的 class
+                });
+            });
+        </script>
     </div>
     <div class="wrapper">
         <div class="order">
@@ -47,16 +59,16 @@
                     <div class="select">
                         <h4>Quantity: </h4>
                         <div class="number-picker">
-                            <button onclick="decrement('item1')">-</button>
-                            <span id="number-item1">1</span>
-                            <button onclick="increment('item1')">+</button>
-                            <!-- <script src="./javascripts/checkout.js"></script> -->
+                            <button onclick="changeQuantity('-')">-</button>&nbsp;
+                            <span id="quantity" quantity="1">1</span>&nbsp;
+                            <input id="hiddenQuantity" type="hidden" value="1" price="12.34" onchange="calSubTotal(event)" />
+                            <button onclick="changeQuantity('+')">+</button>
                         </div>
                     </div>
                     <button class="delete"><i class="fa-solid fa-trash"></i></button>
-                    <p id="itemTotal-1">$ 12.34</p>
-                    <!-- <script src="./javascripts/checkout.js"></script> -->
+                    <div class="cardPrice"><p>$</p><p id="subTotal">12.34</p></div>  
                 </li>
+
                 <li class="card">
                     <div class="picture"><img src="./img/NYCD.jpg" alt=""></div>
                     <a href="">
@@ -65,15 +77,16 @@
                     <div class="select">
                         <h4>Quantity: </h4>
                         <div class="number-picker">
-                            <button onclick="decrement('item2')">-</button>
-                            <span id="number-item2">1</span>
-                            <button onclick="increment('item2')">+</button>
-                            <!-- <script src="./javascripts/checkout.js"></script> -->
+                            <button onclick="changeQuantity2('-')">-</button>&nbsp;
+                            <span id="quantity2" quantity="1">1</span>&nbsp;
+                            <input id="hiddenQuantity2" type="hidden" value="1" price="9.99" onchange="calSubTotal2(event)" />
+                            <button onclick="changeQuantity2('+')">+</button>
                         </div>
                     </div>
-                    <button class="delete" type=""><i class="fa-solid fa-trash"></i></button>
-                    <p id="itemTotal-2">$ 56.78</p>
-                    <!-- <script src="./javascripts/checkout.js"></script> -->
+                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    <div class="cardPrice">
+                        <p>$</p><p id="subTotal2">9.99</p>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -101,9 +114,44 @@
                 </div>
                 <a href="#">CONFIRM & PAY</a>
             </div>
-            <!-- <script src="./javascripts/checkout.js"></script> -->
         </div>
+        <script>
+            // 計算 item-total
+            function calculateItemTotal() {
+                const price1 = parseFloat(document.querySelector('#hiddenQuantity').getAttribute('price'));
+                const quantity1 = parseInt(document.querySelector('#hiddenQuantity').value);
+                const price2 = parseFloat(document.querySelector('#hiddenQuantity2').getAttribute('price'));
+                const quantity2 = parseInt(document.querySelector('#hiddenQuantity2').value);
 
+                const itemTotal = (price1 * quantity1) + (price2 * quantity2);
+                return itemTotal;
+            }
+
+            // 計算 tax-total
+            function calculateTaxTotal(itemTotal) {
+                const taxRate = 0.05;
+                const taxTotal = itemTotal * taxRate;
+                return taxTotal;
+            }
+
+            // 更新總價顯示
+            function updateTotalPrices() {
+                const itemTotal = calculateItemTotal();
+                const taxTotal = calculateTaxTotal(itemTotal);
+                const orderTotal = itemTotal + taxTotal;
+
+                document.querySelector('#item-total').textContent = `US $${itemTotal.toFixed(2)}`;
+                document.querySelector('#tax-total').textContent = `US $${taxTotal.toFixed(2)}`;
+                document.querySelector('#order-total').textContent = `US $${orderTotal.toFixed(2)}`;
+            }
+
+            // 呼叫一次以初始化顯示
+            updateTotalPrices();
+
+            // 監聽數量選取器的變化，更新總價
+            document.querySelector('#hiddenQuantity').addEventListener('change', updateTotalPrices);
+            document.querySelector('#hiddenQuantity2').addEventListener('change', updateTotalPrices);
+        </script>
     </div>
 
     <div class="footer">

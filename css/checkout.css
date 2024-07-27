@@ -219,7 +219,7 @@ body {
     color: #343b4d;
 }
 
-.card p{
+.card .cardPrice{
     margin-top: 16px;
     margin-left: auto;
     font-size: 1.8vw;
@@ -230,6 +230,8 @@ body {
     display: inline;
     vertical-align: middle;
     padding-right: 12px;
+
+    display: flex;
 }
 
 .payment{

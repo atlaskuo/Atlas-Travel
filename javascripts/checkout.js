@@ -1,56 +1,98 @@
 
-// 個別數量選取器功能
-function increment(itemId) {
-    const numberElement = document.getElementById(`number-${itemId}`);
-    const currentQuantity = parseInt(numberElement.textContent);
-    const newQuantity = currentQuantity + 1;
-    numberElement.textContent = newQuantity;
-}
+// 卡片1
+function changeQuantity(direction) {
+    const elem = document.querySelector(`#quantity`);
+    const hiddenQuantityElem = document.querySelector(`#hiddenQuantity`);
+    let quantity = parseInt(elem.getAttribute('quantity'));
+    
 
-function decrement(itemId) {
-    const numberElement = document.getElementById(`number-${itemId}`);
-    const currentQuantity = parseInt(numberElement.textContent);
-    if (currentQuantity > 1) {
-        const newQuantity = currentQuantity - 1;
-        numberElement.textContent = newQuantity;
+    if (direction === '-') {
+        quantity--;
+    } else if (direction === '+') {
+        quantity++;
+    } else {
+        alert("What's wrong with you?");
     }
+
+    elem.innerHTML = quantity;
+    elem.setAttribute('quantity', quantity);
+
+    // 要透過程式觸發事件要補最下面一行
+    hiddenQuantityElem.value = quantity;
+    hiddenQuantityElem.dispatchEvent(new Event('change'));
+
 }
 
-// // 
-// function updateItemTotal(itemId) {
-//     let numberElement = document.getElementById(`number-${itemId}`);
-//     let itemTotalElement = document.getElementById(`itemTotal-${itemId}`);
-    
-//     let currentQuantity = parseInt(numberElement.textContent);
-//     let itemPrice = parseFloat(itemTotalElement.textContent.replace('$', '')); // 移除美元符號並轉換為浮點數
-    
-//     let newTotal = (currentQuantity * itemPrice).toFixed(2); // 四捨五入到小數點後兩位
-//     itemTotalElement.textContent = `$ ${newTotal}`;
+
+function calSubTotal() {
+    const subTotal = document.querySelector(`#subTotal`);
+    const quantity = parseInt(event.target.value);
+    const price = parseFloat(event.target.getAttribute('price'));
+
+    subTotal.innerHTML = (quantity * price).toFixed(2);
+}
+
+// 卡片2
+function changeQuantity2(direction) {
+    const elem = document.querySelector(`#quantity2`);
+    const hiddenQuantityElem = document.querySelector(`#hiddenQuantity2`);
+    let quantity = parseInt(elem.getAttribute('quantity'));
+
+    if (direction === '-') {
+        quantity--;
+    } else if (direction === '+') {
+        quantity++;
+    } else {
+        alert("What's wrong with you?");
+    }
+
+    elem.innerHTML = quantity;
+    elem.setAttribute('quantity', quantity);
+
+    // 觸發事件
+    hiddenQuantityElem.value = quantity;
+    hiddenQuantityElem.dispatchEvent(new Event('change'));
+}
+
+function calSubTotal2(event) {
+    const subTotal = document.querySelector(`#subTotal2`);
+    const quantity = parseInt(event.target.value);
+    const price = parseFloat(event.target.getAttribute('price'));
+
+    subTotal.innerHTML = (quantity * price).toFixed(2);
+
+}
+
+// // 觸發異常，先寫在HTML裡
+// // 計算 item-total
+// function calculateItemTotal(event) {
+//     const price1 = parseFloat(document.querySelector('#hiddenQuantity').getAttribute('price'));
+//     const quantity1 = parseInt(document.querySelector('#hiddenQuantity').value);
+//     const price2 = parseFloat(document.querySelector('#hiddenQuantity2').getAttribute('price'));
+//     const quantity2 = parseInt(document.querySelector('#hiddenQuantity2').value);
+
+//     const itemTotal = (price1 * quantity1) + (price2 * quantity2);
+//     return itemTotal;
 // }
 
-// // 
-// function updatePaymentTotals() {
-//     const itemTotalElements = document.querySelectorAll('[id^="itemTotal-"]');
-    
-//     let totalItems = 0;
-//     let totalTax = 0;
-    
-//     itemTotalElements.forEach((element) => {
-//         const itemPrice = parseFloat(element.textContent.replace('$', ''));
-//         totalItems += itemPrice;
-//         totalTax += itemPrice * 0.05;
-//     });
-    
-//     const itemTotalElement = document.getElementById('item-total');
-//     const taxTotalElement = document.getElementById('tax-total');
-//     const orderTotalElement = document.getElementById('order-total');
-    
-//     itemTotalElement.textContent = `$ ${totalItems.toFixed(2)}`;
-//     taxTotalElement.textContent = `$ ${totalTax.toFixed(2)}`;
-    
-//     const orderTotal = totalItems + totalTax;
-//     orderTotalElement.textContent = `$ ${orderTotal.toFixed(2)}`;
+// // 計算 tax-total
+// function calculateTaxTotal(itemTotal) {
+//     const taxRate = 0.05;
+//     const taxTotal = itemTotal * taxRate;
+//     return taxTotal;
 // }
 
-// // 在每次更新數量選取器時呼叫這個函數
-// // 例如：updateItemTotal('item1') 或 updateItemTotal('item2')
+// // 更新總價顯示
+// function updateTotalPrices() {
+//     const itemTotal = calculateItemTotal();
+//     const taxTotal = calculateTaxTotal(itemTotal);
+//     const orderTotal = itemTotal + taxTotal;
+
+//     document.querySelector('#item-total').textContent = `US $${itemTotal.toFixed(2)}`;
+//     document.querySelector('#tax-total').textContent = `US $${taxTotal.toFixed(2)}`;
+//     document.querySelector('#order-total').textContent = `US $${orderTotal.toFixed(2)}`;
+// }
+
+// // 監聽數量選取器的變化，更新總價
+// document.querySelector('#hiddenQuantity').addEventListener('change', updateTotalPrices);
+// document.querySelector('#hiddenQuantity2').addEventListener('change', updateTotalPrices);

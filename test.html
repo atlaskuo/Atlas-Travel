@@ -31,5 +31,80 @@
         <p>Lorem ipsum...</p>
     </div>
     <script src="./javascripts/test.js"></script>
+
+
+
+    <!-- 計算機測試 -->
+    
+        <!-- 第一個數量選取器 -->
+        <div>
+            <button onclick="changeQuantity('-')">-</button>&nbsp;
+            <span id="quantity1" quantity="1">1</span>&nbsp;
+            <input
+                id="hiddenQuantity1"
+                type="hidden"
+                value="1"
+                price="12.34"
+                onchange="calSubTotal(event)"
+            />
+            <button onclick="changeQuantity('+')">+</button>
+        </div>
+    
+        <!-- 第二個數量選取器 -->
+        <div>
+            <button onclick="changeQuantity2('-')">-</button>&nbsp;
+            <span id="quantity2" quantity="1">1</span>&nbsp;
+            <input
+                id="hiddenQuantity2"
+                type="hidden"
+                value="1"
+                price="9.99"
+                onchange="calSubTotal2(event)"
+            />
+            <button onclick="changeQuantity2('+')">+</button>
+        </div>
+    
+        <!-- 顯示總價 -->
+        <div>
+            <span>SubTotal 1:</span>
+            $ <span id="subTotal1">12.34</span>
+        </div>
+        <div>
+            <span>SubTotal 2:</span>
+            $ <span id="subTotal2">9.99</span>
+        </div>
+
+        <script>
+            function changeQuantity2(direction) {
+                const elem = document.querySelector(`#quantity2`);
+                const hiddenQuantityElem = document.querySelector(`#hiddenQuantity2`);
+                let quantity = parseInt(elem.getAttribute('quantity'));
+        
+                if (direction === '-') {
+                    quantity--;
+                } else if (direction === '+') {
+                    quantity++;
+                } else {
+                    alert("What's wrong with you?");
+                }
+        
+                elem.innerHTML = quantity;
+                elem.setAttribute('quantity', quantity);
+        
+                // 觸發事件
+                hiddenQuantityElem.value = quantity;
+                hiddenQuantityElem.dispatchEvent(new Event('change'));
+            }
+        
+            function calSubTotal2(event) {
+                const subTotal = document.querySelector(`#subTotal2`);
+                const quantity = parseInt(event.target.value);
+                const price = parseFloat(event.target.getAttribute('price'));
+        
+                subTotal.innerHTML = (quantity * price).toFixed(2);
+            }
+        </script>
+
+     
     
 </body>
