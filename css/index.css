@@ -145,6 +145,7 @@ body {
 
 .info a:hover li{
     transform: translateY(-12px);
+    transition: .5s;
 }
 
 .card img {

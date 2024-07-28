@@ -294,6 +294,7 @@ iframe{
 
 .ad a:hover li{
     transform: translateY(-12px);
+    transition: .5s;
 }
 
 .ad h3{
